@@ -19,7 +19,7 @@ public class LinkedListDeque<T>  {
 
     private Node sentinal;
     private int size;
-    private List<T> returnlist = new ArrayList<>();
+
 
     public LinkedListDeque() {
         sentinal = new Node(null, null, null);
@@ -33,7 +33,6 @@ public class LinkedListDeque<T>  {
         sentinal.next = new Node(sentinal, x, sentinal.next);
         sentinal.next.next.before = sentinal.next;
         size += 1;
-        returnlist.addFirst(x);
     }
 
 
@@ -41,12 +40,17 @@ public class LinkedListDeque<T>  {
         sentinal.before = new Node(sentinal.before, x, sentinal);
         sentinal.before.before.next = sentinal.before;
         size += 1;
-        returnlist.add(x);
     }
 
 
     public List<T> toList() {
-        return returnlist;
+        List<T> lst = new ArrayList<>();
+        Node current = sentinal.next;
+        while (current.item != null){
+            lst.add(current.item);
+            current = current.next;
+        }
+        return lst;
     }
 
 
@@ -68,7 +72,6 @@ public class LinkedListDeque<T>  {
             sentinal.next = sentinal.next.next;
             sentinal.next.before = sentinal;
             this.size -=1;
-            this.returnlist.removeFirst();
             return returnitem;
         }
     }
@@ -82,7 +85,6 @@ public class LinkedListDeque<T>  {
             sentinal.before = sentinal.before.before;
             sentinal.before.next=sentinal;
             this.size -=1;
-            this.returnlist.removeLast();
             return returnitem;
         }
     }
@@ -119,6 +121,7 @@ public class LinkedListDeque<T>  {
     }
 
     public void printDeque() {
+        List<T> returnlist = toList();
         System.out.println(
                 returnlist.stream()
                         .map(Object::toString)
