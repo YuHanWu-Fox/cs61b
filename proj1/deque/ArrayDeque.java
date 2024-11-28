@@ -1,7 +1,5 @@
 package deque;
-import java.util.ArrayList;
-import java.util.List;
-import java.lang.Math;
+
 
 public class ArrayDeque<T> {
 
@@ -38,15 +36,7 @@ public class ArrayDeque<T> {
     }
 
 
-    public List<T> toList() {
-        List<T> returnList = new ArrayList<>();
-        int front = next_front + 1;
-        while (front < next_back) {
-            returnList.add(items[Math.floorMod(front, items.length)]);
-            front += 1;
-        }
-        return returnList;
-    }
+
 
 
     public boolean isEmpty() {

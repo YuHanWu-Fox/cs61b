@@ -19,7 +19,7 @@ public class LinkedListDeque<T>  {
 
     private Node sentinal;
     private int size;
-    private List<T> returnlist = new ArrayList<T>();
+    private List<T> returnlist = new ArrayList<>();
 
     public LinkedListDeque() {
         sentinal = new Node(null, null, null);
