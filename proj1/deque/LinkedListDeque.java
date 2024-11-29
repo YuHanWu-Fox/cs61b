@@ -1,6 +1,6 @@
 package deque;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,15 +43,15 @@ public class LinkedListDeque<T>  {
     }
 
 
-    public List<T> toList() {
-        List<T> lst = new ArrayList<>();
-        Node current = sentinal.next;
-        while (current.item != null){
-            lst.add(current.item);
-            current = current.next;
-        }
-        return lst;
-    }
+//    public List<T> toList() {
+//        List<T> lst = new ArrayList<>();
+//        Node current = sentinal.next;
+//        while (current.item != null){
+//            lst.add(current.item);
+//            current = current.next;
+//        }
+//        return lst;
+//    }
 
 
     public boolean isEmpty() {
@@ -120,12 +120,12 @@ public class LinkedListDeque<T>  {
         }
     }
 
-    public void printDeque() {
-        List<T> returnlist = toList();
-        System.out.println(
-                returnlist.stream()
-                        .map(Object::toString)
-                        .collect(Collectors.joining(" "))
-        );
-    }
+//    public void printDeque() {
+//        List<T> returnlist = toList();
+//        System.out.println(
+//                returnlist.stream()
+//                        .map(Object::toString)
+//                        .collect(Collectors.joining(" "))
+//        );
+//    }
 }

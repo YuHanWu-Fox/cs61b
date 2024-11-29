@@ -133,12 +133,4 @@ public class LinkedListDequeTest {
         }
     }
 
-    @Test
-    public void ownTest() {
-        LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
-        lld1.returnlist.addFirst(1);
-        System.out.println(lld1.returnlist.getClass());
-        System.out.println(lld1.returnlist);
-        System.out.println(lld1.returnlist.getClass().getClassLoader());
-    }
 }
